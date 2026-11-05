@@ -1,0 +1,892 @@
+// Q1 Display name, age and college name
+public class Main {
+    public static void main(String[] args) {
+        String name = "Himanshu";
+        int age = 19;
+        String college = "COER University";
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("College: " + college);
+    }
+}
+//Q2. Rectangle class
+class Rectangle {
+    double length, breadth;
+    static String shapeName = "Rectangle";
+
+    Rectangle(double l, double b) {
+        length = l;
+        breadth = b;
+    }
+
+    void calculateArea() {
+        double area = length * breadth;
+        System.out.println(shapeName + " Area: " + area);
+    }
+
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle(10, 5);
+        r.calculateArea();
+    }
+}
+// Q3. Circle class
+class Circle {
+    double radius;
+    static final double PI = 3.14;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    void calculate() {
+        double area = PI * radius * radius;
+        double circumference = 2 * PI * radius;
+
+        System.out.println("Area: " + area);
+        System.out.println("Circumference: " + circumference);
+    }
+
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+        c.calculate();
+    }
+}
+//Q4. Employee class
+class Employee {
+    int empId;
+    double salary;
+    static String companyName = "ABC Technologies";
+
+    Employee(int id, double s) {
+        empId = id;
+        salary = s;
+    }
+
+    void display() {
+        String details = "Employee ID: " + empId
+                + "\nSalary: " + salary;
+
+        System.out.println(details);
+        System.out.println("Company: " + companyName);
+    }
+
+    public static void main(String[] args) {
+        Employee e = new Employee(101, 35000);
+        e.display();
+    }
+}
+//Q5. Book class
+class Book {
+    String title, author;
+    double price;
+    static String publisher = "ABC Publications";
+
+    Book(String t, String a, double p) {
+        title = t;
+        author = a;
+        price = p;
+    }
+
+    void display() {
+        String details = "Title: " + title
+                + "\nAuthor: " + author
+                + "\nPrice: Rs. " + price;
+
+        System.out.println(details);
+        System.out.println("Publisher: " + publisher);
+    }
+
+    public static void main(String[] args) {
+        Book b = new Book("Java Basics", "James", 450);
+        b.display();
+    }
+}
+//Q6. Car class
+class Car {
+    String brand;
+    double mileage;
+    static int wheels = 4;
+
+    Car(String b, double m) {
+        brand = b;
+        mileage = m;
+    }
+
+    void display() {
+        String details = "Brand: " + brand
+                + "\nMileage: " + mileage
+                + "\nWheels: " + wheels;
+
+        System.out.println(details);
+    }
+
+    public static void main(String[] args) {
+        Car c = new Car("Maruti", 22.5);
+        c.display();
+    }
+}
+//Q7. BankAccount – Deposit method
+class BankAccount {
+    long accountNumber;
+    double balance;
+    static String bankName = "State Bank";
+
+    BankAccount(long n, double b) {
+        accountNumber = n;
+        balance = b;
+    }
+
+    void deposit(double amount) {
+        double newBalance = balance + amount;
+        balance = newBalance;
+
+        System.out.println("Deposited: Rs. " + amount);
+        System.out.println("Updated Balance: Rs. " + balance);
+    }
+
+    public static void main(String[] args) {
+        BankAccount b = new BankAccount(12345678, 5000);
+
+        System.out.println("Bank: " + bankName);
+        System.out.println("Account: " + b.accountNumber);
+
+        b.deposit(1500);
+    }
+}
+//Q8. Pen class
+class Pen {
+    String color, type;
+    static String manufacturer = "Cello";
+
+    Pen(String c, String t) {
+        color = c;
+        type = t;
+    }
+
+    void display() {
+        String details = "Color: " + color
+                + "\nType: " + type;
+
+        System.out.println(details);
+        System.out.println("Manufacturer: " + manufacturer);
+    }
+
+    public static void main(String[] args) {
+        Pen p = new Pen("Blue", "Ballpoint");
+        p.display();
+    }
+}
+//Q9. Laptop class
+class Laptop {
+    String brand;
+    int RAM;
+    static String os = "Windows";
+
+    Laptop(String b, int r) {
+        brand = b;
+        RAM = r;
+    }
+
+    void display() {
+        String details = "Brand: " + brand
+                + "\nRAM: " + RAM + " GB";
+
+        System.out.println(details);
+        System.out.println("Operating System: " + os);
+    }
+
+    public static void main(String[] args) {
+        Laptop l = new Laptop("Dell", 8);
+        l.display();
+    }
+}
+//Q10. Movie class
+class Movie {
+    String name, genre;
+    double rating;
+    static String industry = "Bollywood";
+
+    Movie(String n, String g, double r) {
+        name = n;
+        genre = g;
+        rating = r;
+    }
+
+    void display() {
+        String details = "Name: " + name
+                + "\nGenre: " + genre
+                + "\nRating: " + rating;
+
+        System.out.println(details);
+        System.out.println("Industry: " + industry);
+    }
+
+    public static void main(String[] args) {
+        Movie m = new Movie("Example Film", "Drama", 8.2);
+        m.display();
+    }
+}
+//Q11. Calculator
+class Calculator {
+    static int operationsCount = 0;
+
+    void add(double a, double b) {
+        double result = a + b;
+        operationsCount++;
+        System.out.println("Addition: " + result);
+    }
+
+    void subtract(double a, double b) {
+        double result = a - b;
+        operationsCount++;
+        System.out.println("Subtraction: " + result);
+    }
+
+    void multiply(double a, double b) {
+        double result = a * b;
+        operationsCount++;
+        System.out.println("Multiplication: " + result);
+    }
+
+    void divide(double a, double b) {
+        if (b == 0) {
+            System.out.println("Cannot divide by zero");
+            return;
+        }
+
+        double result = a / b;
+        operationsCount++;
+        System.out.println("Division: " + result);
+    }
+
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+
+        c.add(20, 5);
+        c.subtract(20, 5);
+        c.multiply(20, 5);
+        c.divide(20, 5);
+
+        System.out.println("Total Operations: " + operationsCount);
+    }
+}
+//Q12. StudentMarks
+class StudentMarks {
+    int marks1, marks2, marks3;
+    static String universityName = "ABC University";
+
+    StudentMarks(int a, int b, int c) {
+        marks1 = a;
+        marks2 = b;
+        marks3 = c;
+    }
+
+    void calculateAverage() {
+        int total = marks1 + marks2 + marks3;
+        double average = total / 3.0;
+
+        System.out.println("University: " + universityName);
+        System.out.println("Total Marks: " + total);
+        System.out.println("Average: " + average);
+    }
+
+    public static void main(String[] args) {
+        StudentMarks s = new StudentMarks(80, 75, 85);
+        s.calculateAverage();
+    }
+}
+//Q13. Temperature conversion
+class Temperature {
+    double celsius;
+    static String scale = "Celsius";
+
+    Temperature(double c) {
+        celsius = c;
+    }
+
+    void convert() {
+        double fahrenheit = (celsius * 9 / 5) + 32;
+        double kelvin = celsius + 273.15;
+
+        System.out.println("Scale: " + scale);
+        System.out.println("Fahrenheit: " + fahrenheit);
+        System.out.println("Kelvin: " + kelvin);
+    }
+
+    public static void main(String[] args) {
+        Temperature t = new Temperature(25);
+        t.convert();
+    }
+}
+//Q14. Person – Voting eligibility
+class Person {
+    String name;
+    int age;
+    static String country = "India";
+
+    Person(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void checkEligibility() {
+        boolean eligible = age >= 18;
+
+        System.out.println("Name: " + name);
+        System.out.println("Country: " + country);
+
+        if (eligible) {
+            System.out.println("Eligible to vote");
+        } else {
+            System.out.println("Not eligible to vote");
+        }
+    }
+
+    public static void main(String[] args) {
+        Person p = new Person("Aman", 20);
+        p.checkEligibility();
+    }
+}
+//Q15. Simple Interest
+class SimpleInterest {
+    double principal, rate, time;
+    static String bank = "ABC Bank";
+
+    SimpleInterest(double p, double r, double t) {
+        principal = p;
+        rate = r;
+        time = t;
+    }
+
+    void calculate() {
+        double interest = (principal * rate * time) / 100;
+
+        System.out.println("Bank: " + bank);
+        System.out.println("Simple Interest: " + interest);
+        System.out.println("Total Amount: " + (principal + interest));
+    }
+
+    public static void main(String[] args) {
+        SimpleInterest s = new SimpleInterest(10000, 5, 2);
+        s.calculate();
+    }
+}
+//Q16. Triangle validity and type
+class Triangle {
+    double a, b, c;
+    static String type = "Scalene/Isosceles/Equilateral";
+
+    Triangle(double x, double y, double z) {
+        a = x;
+        b = y;
+        c = z;
+    }
+
+    void checkTriangle() {
+        boolean valid = a > 0 && b > 0 && c > 0
+                && a + b > c
+                && a + c > b
+                && b + c > a;
+
+        if (!valid) {
+            System.out.println("Invalid Triangle");
+        } else if (a == b && b == c) {
+            System.out.println("Equilateral Triangle");
+        } else if (a == b || b == c || a == c) {
+            System.out.println("Isosceles Triangle");
+        } else {
+            System.out.println("Scalene Triangle");
+        }
+    }
+
+    public static void main(String[] args) {
+        Triangle t = new Triangle(5, 5, 6);
+        t.checkTriangle();
+    }
+}
+//Q17. StudentGrade
+class StudentGrade {
+    String name;
+    double marks;
+    static double passingMarks = 40;
+
+    StudentGrade(String n, double m) {
+        name = n;
+        marks = m;
+    }
+
+    void assignGrade() {
+        String grade;
+
+        if (marks < 0 || marks > 100)
+            grade = "Invalid Marks";
+        else if (marks >= 90)
+            grade = "A+";
+        else if (marks >= 80)
+            grade = "A";
+        else if (marks >= 70)
+            grade = "B";
+        else if (marks >= 60)
+            grade = "C";
+        else if (marks >= passingMarks)
+            grade = "D";
+        else
+            grade = "Fail";
+
+        System.out.println("Name: " + name);
+        System.out.println("Grade: " + grade);
+    }
+
+    public static void main(String[] args) {
+        StudentGrade s = new StudentGrade("Riya", 85);
+        s.assignGrade();
+    }
+}
+//Q18. ElectricBill
+class ElectricBill {
+    int units;
+    static double fixedCharge = 50;
+
+    ElectricBill(int u) {
+        units = u;
+    }
+
+    void calculateBill() {
+        double energyCharge;
+
+        if (units < 0) {
+            System.out.println("Invalid Units");
+            return;
+        } else if (units <= 100) {
+            energyCharge = units * 1.5;
+        } else if (units <= 200) {
+            energyCharge = 100 * 1.5 + (units - 100) * 2.5;
+        } else {
+            energyCharge = 100 * 1.5 + 100 * 2.5
+                    + (units - 200) * 4;
+        }
+
+        double totalBill = energyCharge + fixedCharge;
+
+        System.out.println("Energy Charge: " + energyCharge);
+        System.out.println("Fixed Charge: " + fixedCharge);
+        System.out.println("Total Bill: " + totalBill);
+    }
+
+    public static void main(String[] args) {
+        ElectricBill e = new ElectricBill(150);
+        e.calculateBill();
+    }
+}
+//Q19. Product – Discount calculation
+class Product {
+    int id;
+    String name;
+    double price;
+    static double discountRate = 10;
+
+    Product(int i, String n, double p) {
+        id = i;
+        name = n;
+        price = p;
+    }
+
+    void calculateFinalPrice() {
+        double discount = price * discountRate / 100;
+        double finalPrice = price - discount;
+
+        System.out.println("Product ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Final Price: " + finalPrice);
+    }
+
+    public static void main(String[] args) {
+        Product p = new Product(101, "Keyboard", 1000);
+        p.calculateFinalPrice();
+    }
+}
+//Q20. BankAccount – Withdrawal
+class BankAccount {
+    double balance;
+    static String bankCode = "ABC001";
+
+    BankAccount(double b) {
+        balance = b;
+    }
+
+    void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid Amount");
+        } else if (amount > balance) {
+            System.out.println("Insufficient Balance");
+        } else {
+            double remainingBalance = balance - amount;
+            balance = remainingBalance;
+
+            System.out.println("Withdrawal Successful");
+            System.out.println("Remaining Balance: " + balance);
+        }
+    }
+
+    public static void main(String[] args) {
+        BankAccount b = new BankAccount(5000);
+
+        System.out.println("Bank Code: " + bankCode);
+        b.withdraw(1200);
+    }
+}
+//Q21. Palindrome number
+class Palindrome {
+    static int countChecks = 0;
+
+    void check(int number) {
+        countChecks++;
+
+        int original = number;
+        int temp = number;
+        int reverse = 0;
+
+        if (number < 0) {
+            System.out.println("Not a Palindrome");
+            return;
+        }
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            reverse = reverse * 10 + digit;
+            temp = temp / 10;
+        }
+
+        if (original == reverse)
+            System.out.println(original + " is Palindrome");
+        else
+            System.out.println(original + " is Not Palindrome");
+    }
+
+    public static void main(String[] args) {
+        Palindrome p = new Palindrome();
+
+        p.check(121);
+        p.check(123);
+
+        System.out.println("Total Checks: " + countChecks);
+    }
+}
+//Q22. Armstrong number
+class Armstrong {
+    static int totalChecks = 0;
+
+    void check(int number) {
+        totalChecks++;
+
+        int original = number;
+        int temp = number;
+        int digits = 0;
+        int sum = 0;
+
+        if (number < 0) {
+            System.out.println("Not an Armstrong Number");
+            return;
+        }
+
+        if (temp == 0)
+            digits = 1;
+
+        while (temp > 0) {
+            digits++;
+            temp = temp / 10;
+        }
+
+        temp = number;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += (int) Math.pow(digit, digits);
+            temp = temp / 10;
+        }
+
+        if (original == sum)
+            System.out.println(original + " is Armstrong");
+        else
+            System.out.println(original + " is Not Armstrong");
+    }
+
+    public static void main(String[] args) {
+        Armstrong a = new Armstrong();
+
+        a.check(153);
+        a.check(123);
+
+        System.out.println("Total Checks: " + totalChecks);
+    }
+}
+//Q23. PrimeChecker
+class PrimeChecker {
+    static int totalPrimeChecks = 0;
+
+    void check(int number) {
+        totalPrimeChecks++;
+
+        boolean isPrime = number >= 2;
+
+        for (int i = 2; i <= number / i && isPrime; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+            }
+        }
+
+        if (isPrime)
+            System.out.println(number + " is Prime");
+        else
+            System.out.println(number + " is Not Prime");
+    }
+
+    public static void main(String[] args) {
+        PrimeChecker p = new PrimeChecker();
+
+        p.check(17);
+        p.check(20);
+
+        System.out.println("Total Checks: " + totalPrimeChecks);
+    }
+}
+//Q24. Fibonacci series
+class Fibonacci {
+    static int seriesCount = 0;
+
+    void display(int n) {
+        seriesCount++;
+
+        int first = 0;
+        int second = 1;
+
+        System.out.print("Fibonacci Series: ");
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print(first + " ");
+
+            int next = first + second;
+            first = second;
+            second = next;
+        }
+
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Fibonacci f = new Fibonacci();
+
+        f.display(7);
+
+        System.out.println("Series Count: " + seriesCount);
+    }
+}
+//Q25. Factorial
+class Factorial {
+    static int totalCalls = 0;
+
+    void calculate(int number) {
+        totalCalls++;
+
+        if (number < 0) {
+            System.out.println("Factorial not defined");
+            return;
+        }
+
+        long factorial = 1;
+
+        for (int i = 1; i <= number; i++) {
+            factorial = factorial * i;
+        }
+
+        System.out.println("Factorial of " + number
+                + " = " + factorial);
+    }
+
+    public static void main(String[] args) {
+        Factorial f = new Factorial();
+
+        f.calculate(5);
+
+        System.out.println("Total Calls: " + totalCalls);
+    }
+}
+//Q26. Matrix addition and subtraction
+class Matrix {
+    int[][] values = new int[2][2];
+
+    static String matrixType = "2x2 Matrix";
+
+    Matrix(int a, int b, int c, int d) {
+        values[0][0] = a;
+        values[0][1] = b;
+        values[1][0] = c;
+        values[1][1] = d;
+    }
+
+    void display(int[][] result) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void calculate(Matrix m) {
+        int[][] sum = new int[2][2];
+        int[][] difference = new int[2][2];
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                sum[i][j] = values[i][j] + m.values[i][j];
+
+                difference[i][j] =
+                        values[i][j] - m.values[i][j];
+            }
+        }
+
+        System.out.println("Addition:");
+        display(sum);
+
+        System.out.println("Subtraction:");
+        display(difference);
+    }
+
+    public static void main(String[] args) {
+        Matrix m1 = new Matrix(1, 2, 3, 4);
+        Matrix m2 = new Matrix(5, 6, 7, 8);
+
+        System.out.println(matrixType);
+        m1.calculate(m2);
+    }
+}
+//Q27. StringReverse
+class StringReverse {
+    static int totalReversals = 0;
+
+    void reverse(String text) {
+        totalReversals++;
+
+        String reversed = "";
+
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reversed = reversed + text.charAt(i);
+        }
+
+        System.out.println("Original String: " + text);
+        System.out.println("Reversed String: " + reversed);
+    }
+
+    public static void main(String[] args) {
+        StringReverse s = new StringReverse();
+
+        s.reverse("Java");
+
+        System.out.println("Total Reversals: " + totalReversals);
+    }
+}
+//Q28. WordCounterclass WordCounter 
+{
+    static String language = "English";
+
+    void countWords(String sentence) {
+        String trimmed = sentence.trim();
+
+        int wordCount;
+
+        if (trimmed.isEmpty()) {
+            wordCount = 0;
+        } else {
+            wordCount = trimmed.split("\\s+").length;
+        }
+
+        System.out.println("Language: " + language);
+        System.out.println("Sentence: " + sentence);
+        System.out.println("Total Words: " + wordCount);
+    }
+
+    public static void main(String[] args) {
+        WordCounter w = new WordCounter();
+
+        w.countWords("Java is easy to learn");
+    }
+}
+//Q29. Employee salary comparison
+class Employee {
+    String name;
+    double salary;
+
+    static String organization = "ABC Limited";
+
+    Employee(String n, double s) {
+        name = n;
+        salary = s;
+    }
+
+    static void compare(Employee e1, Employee e2) {
+        System.out.println("Organization: " + organization);
+
+        if (e1.salary > e2.salary) {
+            System.out.println(e1.name + " has higher salary");
+        } else if (e2.salary > e1.salary) {
+            System.out.println(e2.name + " has higher salary");
+        } else {
+            System.out.println("Both salaries are equal");
+        }
+    }
+
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Aman", 40000);
+        Employee e2 = new Employee("Riya", 45000);
+
+        compare(e1, e2);
+    }
+}
+//Q30. Library – Issue and Return books
+class Library {
+    int booksAvailable;
+
+    static String libraryName = "Central Library";
+
+    Library(int books) {
+        booksAvailable = books;
+    }
+
+    void issueBooks(int quantity) {
+        if (quantity <= 0) {
+            System.out.println("Invalid Quantity");
+        } else if (quantity > booksAvailable) {
+            System.out.println("Not Enough Books Available");
+        } else {
+            int remaining = booksAvailable - quantity;
+            booksAvailable = remaining;
+
+            System.out.println(quantity + " Books Issued");
+            System.out.println("Available Books: " + booksAvailable);
+        }
+    }
+
+    void returnBooks(int quantity) {
+        if (quantity <= 0) {
+            System.out.println("Invalid Quantity");
+        } else {
+            int updated = booksAvailable + quantity;
+            booksAvailable = updated;
+
+            System.out.println(quantity + " Books Returned");
+            System.out.println("Available Books: " + booksAvailable);
+        }
+    }
+
+    public static void main(String[] args) {
+        Library l = new Library(50);
+
+        System.out.println("Library: " + libraryName);
+
+        l.issueBooks(5);
+        l.returnBooks(2);
+    }
+}
+    
